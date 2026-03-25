@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CineSpoilers</title>
+</head>
+<body>
+    <h1>Lista de Películas</h1>
+
+    <ul>
+        {% for movie in movies %}
+            <li>
+                <strong>{{ movie.title }}</strong><br>
+                {{ movie.description }}
+            </li>
+        {% empty %}
+            <li>No hay películas</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
