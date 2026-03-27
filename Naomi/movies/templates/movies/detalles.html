@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}{{ movie.title }} - CineNaomi{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+        
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white py-3">
+                <h2 class="mb-0 fw-bold">🎬 {{ movie.title }}</h2>
+            </div>
+            <div class="card-body p-4">
+                <p class="mb-2">
+                    <span class="badge bg-success fs-6">{{ movie.year }}</span>
+                </p>
+                
+                <h4 class="text-secondary mt-3">Director:</h4>
+                <p class="fs-5 text-dark"><em>{{ movie.director }}</em></p>
+
+                <h4 class="text-secondary mt-3">Sinopsis Completa:</h4>
+                <p class="fs-5 text-muted">
+                    {{ movie.sinopsis|default:"No hay descripción disponible para esta película." }}
+                </p>
+            </div>
+            <div class="card-footer bg-light d-flex justify-content-between py-3">
+                <a href="{% url 'lista_movies' %}" class="btn btn-outline-secondary">
+                    ⬅ Volver al catálogo
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
